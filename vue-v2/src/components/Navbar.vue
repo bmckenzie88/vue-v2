@@ -28,7 +28,7 @@
           </ul>
           <form class="d-flex">
             <button class="btn btn-primary" @click.prevent="changeTheme()">
-              Toggle Navbar
+              Toggle
             </button>
           </form>
       </div>
@@ -56,7 +56,19 @@ export default {
       }
 
       this.theme = theme;
+      this.storeThemeSetting()
     },
+    storeThemeSetting() {
+      localStorage.setItem('theme', this.theme)
+    },
+    getThemeSetting() {
+            let theme = localStorage.getItem('theme')
+
+            if (theme) {
+              this.theme = theme
+            }
+
+    }
   },
 };
 </script>

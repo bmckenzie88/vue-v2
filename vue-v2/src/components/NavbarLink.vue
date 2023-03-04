@@ -11,19 +11,20 @@
 
 <script>
 export default {
-    props: ['page', 'isActive'],
-    computed: {
-        activeClasses() {
-            return {
-                active: this.isActive,
-                emphasize: this.isActive
-            }
-        }
-    }
-}
+  props: ['page', 'isActive'],
+  computed: {
+    activeClasses() {
+      return {
+        active: this.isActive,
+        emphasize: this.isActive,
+      };
+    },
+  },
+};
 </script>
 
-<style>
+<style scoped>
 .emphasize {
   text-decoration: underline !important;
-}</style>
+}
+</style>
