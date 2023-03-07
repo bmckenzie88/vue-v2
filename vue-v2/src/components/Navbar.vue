@@ -42,6 +42,9 @@ export default {
   components: {
     NavbarLink
   },
+  created() {
+    this.getThemeSetting();
+  },
   props: ["pages", "activePage", "navLinkClick"],
   data() {
     return {
