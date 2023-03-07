@@ -11,8 +11,7 @@
         <input
           type="text"
           class="form-control"
-          :value="pageTitle"
-          @input="(e) => pageTitle = e.target.value"
+          v-model="pageTitle"
         />
       </div>
       <div class="mb-3">
@@ -26,13 +25,14 @@
           type="text"
           class="form-control"
           rows="5"
+          v-model="content"
         >
         </textarea>
       </div>
       <div class="mb-3">
         <button
         class="btn btn-primary"
-        @click.prevent="pageCreated({pageTitle})">
+        @click.prevent="pageCreated({pageTitle, content})">
     Create Page</button>
       </div>
     </form>
@@ -44,7 +44,8 @@ export default {
     props: ['pageCreated'],
     data() {
         return {
-            pageTitle: ''
+            pageTitle: '',
+            content:''
         }
     }
 }</script>
