@@ -66,6 +66,7 @@
             <input
               class="form-check-input"
               type="checkbox"
+              v-model="published"
             />
             <label
               class="form-check-label"
@@ -94,12 +95,11 @@
   export default {
     props: ['pageCreated'],
     computed: {
-        isFormInvalid() {
-            return !this.pageTitle ||
-          !this.content ||
-          !this.linkText ||
-          !this.linkUrl
-        }
+      isFormInvalid() {
+        return (
+          !this.pageTitle || !this.content || !this.linkText || !this.linkUrl
+        );
+      },
     },
     data() {
       return {
@@ -107,6 +107,7 @@
         content: '',
         linkText: '',
         linkUrl: '',
+        published: true,
       };
     },
     methods: {
@@ -128,7 +129,14 @@
             text: this.linkText,
             url: this.linkUrl,
           },
+          published: this.published,
         });
+
+        this.pageTitle = '';
+        this.content = '';
+        this.linkText = '';
+        this.linkUrl = '';
+        this.published = true;
       },
     },
   };
