@@ -6,7 +6,7 @@
       aria-current="page"
       :href="page.link.url"
       :title="`This link goes to the \${page.link.text} page`"
-      @click.prevent="$bus.$emit('navbarLinkActivated, index')"
+      @click.prevent="$bus.$emit('navbarLinkActived, index')"
       >{{ page.link.text }}</a
     >
   </li>
