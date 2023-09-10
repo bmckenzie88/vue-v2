@@ -9,7 +9,7 @@
 export default {
   props: {
     page: {
-        tyoe: Object,
+        type: Object,
         default(rawprops) {
             return {
                 pageTitle: '',

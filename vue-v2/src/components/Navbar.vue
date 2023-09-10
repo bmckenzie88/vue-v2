@@ -30,7 +30,7 @@
             class="nav-item"
             :key="index"
             :page="page"
-            ;index="index"
+            :index="index"
             :isActive="activePage === index"
             @actived="$emit('actived')"
           >
@@ -64,7 +64,7 @@
         return this.pages.filter((p) => p.published);
       },
     },
-    props: ['pages', 'activePage'],
+    props: ['pages', 'activePage', 'navLinkClick'],
     data() {
       return {
         theme: 'light',
